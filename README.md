@@ -4,6 +4,8 @@
 
 Outline the chosen approach for authorization and authentication for the clients of the `FHIR` services.
 
+Require minimal changes on the REST API application.
+
 ### Flow
 
 ![flow](./flow.png)
