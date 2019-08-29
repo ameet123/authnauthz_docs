@@ -6,7 +6,7 @@ Outline the chosen approach for authorization and authentication for the clients
 
 ### Flow
 
-![flow](C:\Users\ameet.chaubal\Documents\projects\JandJ\flow.png)
+![flow](./flow.png)
 
 #### Sequence Diagram
 
@@ -30,8 +30,6 @@ sequenceDiagram
 
 
 
-
-
 ### KeyCloak:
 
 The approach will use `KeyCloak` server to provide `OAUTH`/`OIDC` token as well as perform RBAC authorization
@@ -40,4 +38,4 @@ The approach will use `KeyCloak` server to provide `OAUTH`/`OIDC` token as well 
 
 ### Long Term:
 
-KeyCloak provides `social logins` as well which will enable external clients to authenticate against other providers.
+KeyCloak provides `social logins` as well, which will enable external clients to authenticate against other providers.
