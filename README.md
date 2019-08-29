@@ -23,9 +23,13 @@ sequenceDiagram
       Istio->>Istio: Multi-tenant validation check
     end
     Note right of Istio: Part of Kubernetes
-    Istio->>DataServicesREST: pass through on success
-    Istio-->>FHIRClient: failure status
-    DataServicesREST->>FHIRClient: Successful response
+    alt success
+     Istio->>DataServicesREST: fetch content
+     DataServicesREST->>FHIRClient: Successful response
+    else failure
+     Istio-->>FHIRClient: invalid credentials
+    end
+   
 ```
 
 
