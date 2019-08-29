@@ -13,18 +13,18 @@ Outline the chosen approach for authorization and authentication for the clients
 ```mermaid
 sequenceDiagram
     participant FHIRClient
-    participant SDO
+    participant Istio
     participant KeyCloak
     participant DataServicesREST
-    FHIRClient->>SDO: request Authentication/RBAC Authorization
+    FHIRClient->>Istio: request Authentication/RBAC Authorization
     loop AuthN_AuthZ
-      SDO->>KeyCloak: OAUTH/OIDC Token
-      SDO->>SDO: check RBAC
-      SDO->>SDO: Multi-tenant validation check
+      Istio->>KeyCloak: OAUTH/OIDC Token
+      Istio->>Istio: check RBAC
+      Istio->>Istio: Multi-tenant validation check
     end
-    Note right of SDO: Part of Kubernetes
-    SDO->>DataServicesREST: pass through on success
-    SDO-->>FHIRClient: failure status
+    Note right of Istio: Part of Kubernetes
+    Istio->>DataServicesREST: pass through on success
+    Istio-->>FHIRClient: failure status
     DataServicesREST->>FHIRClient: Successful response
 ```
 
