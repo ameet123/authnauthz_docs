@@ -1,0 +1,6 @@
+%2F%2F Cool Class Diagram, [Client (V&V Portal){bg:pink}] REST      Request->[SDO|proxy{bg:springgreen}]
+[SDO|proxy{bg:springgreen}]<-[KeyCloak|oauth;oidc{bg:powderblue}]
+[SDO|proxy{bg:springgreen}]<-[RBAC Check{bg:springgreen}]
+[SDO|proxy{bg:springgreen}]<-[self Multi-tenant Check{bg:springgreen}]
+
+[SDO|proxy{bg:springgreen}] ->[Downstream REST Service{bg:orange}]
